@@ -77,3 +77,5 @@ tests `*.test.(ts|js|tsx|jsx)`.
   `useMemo`.
 - Encapsulate reusable logic in custom hooks to promote code reuse and 
 separation of concerns.
+- Use tailwindcss utility classes for styling components instead of inline 
+  styles or CSS modules, unless there is a specific reason to do otherwise.
