@@ -14,12 +14,13 @@ alongside the React Copilot Instructions.
 
 ### Naming Conventions
 
-- Prefix query hooks with "use" followed by descriptive action (e.g., 
-`useUserData`, `useProducts`, `usePostComments`).
+- Prefix query hooks with "use" followed by descriptive action and suffix with 
+"Query" (e.g., `useUserDataQuery`, `useProductsQuery`, `usePostCommentsQuery`).
 - Use descriptive query keys that reflect the data structure (e.g., 
 `['users', userId]`, `['posts', 'list', filters]`).
-- Name mutation hooks with "use" prefix and action verb (e.g., `useCreateUser`, 
-`useUpdatePost`, `useDeleteComment`).
+- Name mutation hooks with "use" prefix, action verb, and suffix with 
+"Mutation" (e.g., `useCreateUserMutation`, `useUpdatePostMutation`, 
+`useDeleteCommentMutation`).
 - Use camelCase for query and mutation function names (e.g., `fetchUserData`, 
 `createPost`, `updateProfile`).
 - Name query key factory functions with the resource name followed by "Keys" 
@@ -152,8 +153,8 @@ pages.
 
 ### Code Organization
 
-- Group related query hooks in dedicated files (e.g., `useUserQueries.ts`, 
-`useProductQueries.ts`).
+- Group related query hooks in dedicated files (e.g., `useUserQuery.ts`, 
+`useProductQuery.ts`).
 - Keep query key factories, hooks, and fetch functions co-located for the 
 same resource.
 - Export query hooks from a central queries/hooks directory for easy imports.
