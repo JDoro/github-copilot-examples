@@ -129,7 +129,7 @@ loader: async ({ params, context, abortController }) => {
   }
   
   return data;
-}
+};
 ```
 
 ### Navigation and Linking
@@ -154,7 +154,7 @@ Example:
   preload="intent"
 >
   View Post
-</Link>
+</Link>;
 ```
 
 ### Search Parameters
@@ -198,7 +198,7 @@ function RouteError() {
       <p>{error.message}</p>
     </div>
   );
-}
+};
 ```
 
 ### Pending States
@@ -240,7 +240,7 @@ function LayoutComponent() {
       <footer>Footer</footer>
     </div>
   );
-}
+};
 ```
 
 ### Route Guards and Authentication
@@ -265,7 +265,7 @@ beforeLoad: async ({ context, location }) => {
       },
     });
   }
-}
+};
 ```
 
 ### Code Splitting and Lazy Loading
