@@ -19,6 +19,7 @@ and requirements for generating code in this repository.
 ## Workflows
 
 ### Creating Pull Requests
+
 - Ensure all code changes are made through pull requests.
 - Include a clear description of the changes made in the pull request.
 - Link related issues or tasks in the pull request description.
@@ -36,8 +37,12 @@ and requirements for generating code in this repository.
   benchmarks or metrics.
 
 ### Reviewing Pull Requests
+
 - Review code for adherence to coding standards.
-- 
+- If the changes involve a web application or user interface, verify the 
+  functionality by running the application and testing the changes. Ensuring 
+  that the chrome devtools console shows no errors or warnings.
+- Provide constructive feedback and suggestions for improvement.
 
 ## Coding Standards
 
