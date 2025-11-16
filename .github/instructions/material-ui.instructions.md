@@ -39,12 +39,11 @@ tree-shaking:
   // Avoid (except for types and utilities)
   import { Button, TextField } from '@mui/material';
   ```
-- Import MUI icons from `@mui/icons-material`:
+- Import Remix icons from `react-icons/ri`:
   ```typescript
-  import DeleteIcon from '@mui/icons-material/Delete';
-  import AddIcon from '@mui/icons-material/Add';
+  import { RiDeleteBinLine, RiAddLine } from 'react-icons/ri';
   ```
-- Group imports logically: React imports → MUI component imports → MUI icon 
+- Group imports logically: React imports → MUI component imports → Remix icon 
 imports → other dependencies → local imports.
 - Import types separately when using TypeScript:
   ```typescript
@@ -413,9 +412,9 @@ colors.
   ```
 - Add icons to buttons for better UX:
   ```jsx
-  <Button startIcon={<AddIcon />}>Add Item</Button>
-  <Button endIcon={<SendIcon />}>Send</Button>
-  <IconButton color="primary"><DeleteIcon /></IconButton>
+  <Button startIcon={<RiAddLine />}>Add Item</Button>
+  <Button endIcon={<RiSendPlaneLine />}>Send</Button>
+  <IconButton color="primary"><RiDeleteBinLine /></IconButton>
   ```
 - Use `LoadingButton` from `@mui/lab` for async operations:
   ```jsx
@@ -519,35 +518,39 @@ colors.
 
 ### Icons
 
-- Import icons from `@mui/icons-material`:
+- Import icons from `react-icons/ri` (Remix icons):
   ```jsx
-  import DeleteIcon from '@mui/icons-material/Delete';
-  import EditIcon from '@mui/icons-material/Edit';
-  import SaveIcon from '@mui/icons-material/Save';
+  import { RiDeleteBinLine, RiEditLine, RiSaveLine } from 'react-icons/ri';
   ```
 - Use `IconButton` for icon-only interactive elements:
   ```jsx
   <IconButton color="primary" onClick={handleEdit}>
-    <EditIcon />
+    <RiEditLine />
   </IconButton>
   ```
-- Set icon sizes using `fontSize` prop:
+- Set icon sizes using `sx` prop or inline styles:
   ```jsx
-  <DeleteIcon fontSize="small" />
-  <DeleteIcon fontSize="medium" />
-  <DeleteIcon fontSize="large" />
-  <DeleteIcon sx={{ fontSize: 40 }} />
+  <RiDeleteBinLine style={{ fontSize: '1rem' }} />
+  <RiDeleteBinLine style={{ fontSize: '1.25rem' }} />
+  <RiDeleteBinLine style={{ fontSize: '1.5rem' }} />
+  <RiDeleteBinLine style={{ fontSize: 40 }} />
   ```
-- Use icons with consistent colors:
+- Use icons with consistent colors via `sx` prop or style:
   ```jsx
-  <DeleteIcon color="primary" />
-  <DeleteIcon color="error" />
-  <DeleteIcon sx={{ color: 'text.secondary' }} />
+  <Box sx={{ color: 'primary.main' }}>
+    <RiDeleteBinLine />
+  </Box>
+  <Box sx={{ color: 'error.main' }}>
+    <RiDeleteBinLine />
+  </Box>
+  <Box sx={{ color: 'text.secondary' }}>
+    <RiDeleteBinLine />
+  </Box>
   ```
 - Add ARIA labels to icon buttons for accessibility:
   ```jsx
   <IconButton aria-label="delete" onClick={handleDelete}>
-    <DeleteIcon />
+    <RiDeleteBinLine />
   </IconButton>
   ```
 - Use `SvgIcon` for custom SVG icons:
@@ -654,7 +657,7 @@ colors.
       avatar={<Avatar>R</Avatar>}
       action={
         <IconButton>
-          <MoreVertIcon />
+          <RiMoreFill />
         </IconButton>
       }
       title="Card Title"
@@ -682,7 +685,7 @@ colors.
   <List>
     <ListItem>
       <ListItemIcon>
-        <InboxIcon />
+        <RiInboxLine />
       </ListItemIcon>
       <ListItemText primary="Inbox" secondary="5 new messages" />
     </ListItem>
@@ -736,7 +739,7 @@ colors.
   <AppBar position="static">
     <Toolbar>
       <IconButton edge="start" color="inherit" sx={{ mr: 2 }}>
-        <MenuIcon />
+        <RiMenuLine />
       </IconButton>
       <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
         App Title
@@ -763,9 +766,9 @@ colors.
 - Use `BottomNavigation` for mobile navigation:
   ```jsx
   <BottomNavigation value={value} onChange={(e, newValue) => setValue(newValue)}>
-    <BottomNavigationAction label="Home" icon={<HomeIcon />} />
-    <BottomNavigationAction label="Search" icon={<SearchIcon />} />
-    <BottomNavigationAction label="Profile" icon={<PersonIcon />} />
+    <BottomNavigationAction label="Home" icon={<RiHomeLine />} />
+    <BottomNavigationAction label="Search" icon={<RiSearchLine />} />
+    <BottomNavigationAction label="Profile" icon={<RiUserLine />} />
   </BottomNavigation>
   ```
 - Implement breadcrumbs for hierarchical navigation:
@@ -815,7 +818,7 @@ colors.
   ```jsx
   <Tooltip title="Delete">
     <IconButton>
-      <DeleteIcon />
+      <RiDeleteBinLine />
     </IconButton>
   </Tooltip>
   ```
@@ -848,15 +851,15 @@ colors.
   <Chip label="Tag" color="primary" />
   <Chip label="Clickable" onClick={handleClick} />
   <Chip label="Deletable" onDelete={handleDelete} />
-  <Chip label="Icon" icon={<FaceIcon />} />
+  <Chip label="Icon" icon={<RiEmotionLine />} />
   ```
 - Use `Badge` for notification indicators:
   ```jsx
   <Badge badgeContent={4} color="primary">
-    <MailIcon />
+    <RiMailLine />
   </Badge>
   <Badge variant="dot" color="error">
-    <NotificationsIcon />
+    <RiNotificationLine />
   </Badge>
   ```
 - Use `Avatar` for user representations:
@@ -864,7 +867,7 @@ colors.
   <Avatar alt="User Name" src="/avatar.jpg" />
   <Avatar>UN</Avatar>
   <Avatar sx={{ bgcolor: 'primary.main' }}>
-    <PersonIcon />
+    <RiUserLine />
   </Avatar>
   ```
 - Use `AvatarGroup` for multiple avatars:
@@ -882,7 +885,7 @@ colors.
 elements:
   ```jsx
   <IconButton aria-label="delete" onClick={handleDelete}>
-    <DeleteIcon />
+    <RiDeleteBinLine />
   </IconButton>
   ```
 - Use proper semantic HTML with the `component` prop:
@@ -978,7 +981,7 @@ or `react-virtualized`.
   
   <ThemeProvider theme={theme}>
     <IconButton onClick={toggleColorMode}>
-      {mode === 'dark' ? <Brightness7Icon /> : <Brightness4Icon />}
+      {mode === 'dark' ? <RiSunLine /> : <RiMoonLine />}
     </IconButton>
     {/* Your app */}
   </ThemeProvider>
