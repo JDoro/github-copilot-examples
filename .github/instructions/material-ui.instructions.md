@@ -89,6 +89,8 @@ over div elements:
       boxShadow: 2,              // theme.shadows[2]
     }}
   >
+    {/* Content */}
+  </Box>
   ```
 - Use responsive values in `sx` prop for mobile-first design:
   ```jsx
@@ -99,6 +101,8 @@ over div elements:
       display: { xs: 'block', md: 'flex' },
     }}
   >
+    {/* Content */}
+  </Box>
   ```
 - Use callback syntax when you need access to the theme:
   ```jsx
@@ -112,6 +116,8 @@ over div elements:
       },
     })}
   >
+    {/* Content */}
+  </Box>
   ```
 - Group related styles logically: layout → spacing → sizing → colors → 
 effects → pseudo-classes.
@@ -202,26 +208,6 @@ dedicated styles file.
       };
     }
   }
-  ```
-- Implement dark mode using theme mode:
-  ```typescript
-  const getTheme = (mode: 'light' | 'dark') =>
-    createTheme({
-      palette: {
-        mode,
-        ...(mode === 'light'
-          ? {
-              // Light mode colors
-              primary: { main: '#1976d2' },
-              background: { default: '#fff', paper: '#f5f5f5' },
-            }
-          : {
-              // Dark mode colors
-              primary: { main: '#90caf9' },
-              background: { default: '#121212', paper: '#1e1e1e' },
-            }),
-      },
-    });
   ```
 - Access theme in components using `useTheme` hook:
   ```typescript
@@ -493,9 +479,9 @@ colors.
 
 ### Icons
 
-- Import icons from `react-icons/ri` (Remix icons):
+- Import icons from `@remixicon/react` (Remix icons):
   ```jsx
-  import { RiDeleteBinLine, RiEditLine, RiSaveLine } from 'react-icons/ri';
+  import { RiDeleteBinLine, RiEditLine, RiSaveLine } from '@remixicon/react';
   ```
 - Use `IconButton` for icon-only interactive elements:
   ```jsx
@@ -592,9 +578,9 @@ colors.
   <Drawer anchor="left" open={open} onClose={handleClose}>
     <Box sx={{ width: 250 }} role="presentation">
       <List>
-        <ListItem button>
+        <ListItemButton>
           <ListItemText primary="Item 1" />
-        </ListItem>
+        </ListItemButton>
       </List>
     </Box>
   </Drawer>
@@ -664,9 +650,9 @@ colors.
       </ListItemIcon>
       <ListItemText primary="Inbox" secondary="5 new messages" />
     </ListItem>
-    <ListItem button onClick={handleClick}>
+    <ListItemButton onClick={handleClick}>
       <ListItemText primary="Starred" />
-    </ListItem>
+    </ListItemButton>
   </List>
   ```
 - Add dividers between list items:
@@ -696,7 +682,7 @@ colors.
   ```jsx
   <ListItemButton onClick={handleClick}>
     <ListItemText primary="Inbox" />
-    {open ? <ExpandLess /> : <ExpandMore />}
+    {open ? <RiArrowUpSLine /> : <RiArrowDownSLine />}
   </ListItemButton>
   <Collapse in={open} timeout="auto" unmountOnExit>
     <List component="div" disablePadding>
@@ -903,28 +889,9 @@ text, 3:1 for large text).
     <HeavyComponent />
   </Suspense>
   ```
-- Memoize styled components to prevent unnecessary re-creation:
-  ```typescript
-  const StyledButton = useMemo(
-    () =>
-      styled(Button)({
-        // styles
-      }),
-    []
-  );
-  ```
 - Use `React.memo` for expensive MUI component wrappers:
   ```typescript
   const MemoizedCard = React.memo(CustomCard);
-  ```
-- Avoid creating inline styles or sx objects in render:
-  ```jsx
-  // Bad
-  <Box sx={{ p: 2, bgcolor: 'primary.main' }}>
-  
-  // Good
-  const boxStyles = { p: 2, bgcolor: 'primary.main' };
-  <Box sx={boxStyles}>
   ```
 - Use `disableRipple` when ripple effects cause performance issues:
   ```jsx
@@ -933,72 +900,6 @@ text, 3:1 for large text).
 - Leverage virtualization for long lists with libraries like `react-window` 
 or `react-virtualized`.
 - Minimize theme provider nesting; use a single ThemeProvider at the root.
-
-### Dark Mode Implementation
-
-- Implement theme mode toggling:
-  ```typescript
-  const [mode, setMode] = useState<'light' | 'dark'>('light');
-  
-  const theme = useMemo(
-    () =>
-      createTheme({
-        palette: {
-          mode,
-        },
-      }),
-    [mode]
-  );
-  
-  const toggleColorMode = () => {
-    setMode((prevMode) => (prevMode === 'light' ? 'dark' : 'light'));
-  };
-  
-  <ThemeProvider theme={theme}>
-    <IconButton onClick={toggleColorMode}>
-      {mode === 'dark' ? <RiSunLine /> : <RiMoonLine />}
-    </IconButton>
-    {/* Your app */}
-  </ThemeProvider>
-  ```
-- Define mode-specific colors in theme:
-  ```typescript
-  const getTheme = (mode: PaletteMode) =>
-    createTheme({
-      palette: {
-        mode,
-        ...(mode === 'light'
-          ? {
-              primary: { main: '#1976d2' },
-              background: { default: '#fafafa', paper: '#fff' },
-            }
-          : {
-              primary: { main: '#90caf9' },
-              background: { default: '#121212', paper: '#1e1e1e' },
-            }),
-      },
-    });
-  ```
-- Use `CssBaseline` to apply consistent baseline styles:
-  ```jsx
-  import CssBaseline from '@mui/material/CssBaseline';
-  
-  <ThemeProvider theme={theme}>
-    <CssBaseline />
-    {/* Your app */}
-  </ThemeProvider>
-  ```
-- Persist theme preference in localStorage:
-  ```typescript
-  const [mode, setMode] = useState<PaletteMode>(() => {
-    const saved = localStorage.getItem('themeMode');
-    return (saved as PaletteMode) || 'light';
-  });
-  
-  useEffect(() => {
-    localStorage.setItem('themeMode', mode);
-  }, [mode]);
-  ```
 
 ### Component Composition
 
@@ -1117,7 +1018,6 @@ components:
   
   backgroundColor: alpha(theme.palette.primary.main, 0.5);
   ```
-- Update renamed props (e.g., `cacheTime` to `gcTime` in related libraries).
 
 ### Code Organization
 
