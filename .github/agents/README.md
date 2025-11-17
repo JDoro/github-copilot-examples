@@ -18,7 +18,7 @@ git commit messages.
 
 **Usage:**
 
-In GitHub Copilot Chat, you can invoke this agent using:
+This agent is available in both VS Code and GitHub.com. You can invoke it in GitHub Copilot Chat using:
 
 ```
 @changelog-manager create a changelog from recent commits
@@ -61,9 +61,10 @@ To create a new custom agent:
      - view
      - edit
      - create
-   target: vscode
    ---
    ```
+   Note: Omit the `target` field to make the agent available in both VS Code and GitHub.com. 
+   Use `target: vscode` to restrict to VS Code only, or `target: github-copilot` for GitHub.com only.
 3. Add detailed instructions in Markdown format
 4. Test the agent in GitHub Copilot Chat
 

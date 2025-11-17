@@ -6,7 +6,6 @@ tools:
   - view
   - edit
   - create
-target: vscode
 metadata:
   category: documentation
   version: 1.0.0
