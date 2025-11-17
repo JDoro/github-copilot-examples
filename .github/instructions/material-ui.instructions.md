@@ -26,31 +26,6 @@ theme directory.
 `useMediaQuery`, `useDialog`).
 - Use kebab-case for icon component files when creating custom icons.
 
-### Import Organization
-
-- Always import MUI components from their specific package paths for better 
-tree-shaking:
-  ```typescript
-  // Good
-  import Button from '@mui/material/Button';
-  import TextField from '@mui/material/TextField';
-  import { Stack, Box } from '@mui/material';
-  
-  // Avoid (except for types and utilities)
-  import { Button, TextField } from '@mui/material';
-  ```
-- Import Remix icons from `react-icons/ri`:
-  ```typescript
-  import { RiDeleteBinLine, RiAddLine } from 'react-icons/ri';
-  ```
-- Group imports logically: React imports → MUI component imports → Remix icon 
-imports → other dependencies → local imports.
-- Import types separately when using TypeScript:
-  ```typescript
-  import type { Theme, SxProps } from '@mui/material/styles';
-  import type { ButtonProps } from '@mui/material/Button';
-  ```
-
 ### Component Usage
 
 - Always use MUI components instead of native HTML elements when available 
