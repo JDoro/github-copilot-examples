@@ -1,11 +1,12 @@
 # Changelog Manager Agent - Usage Examples
 
 This document demonstrates practical examples of how to use the changelog 
-manager agent with GitHub Copilot.
+manager agent with GitHub Copilot. The agent is available in both VS Code 
+and GitHub.com.
 
 ## Example 1: Creating a New Changelog
 
-**User prompt:**
+**User prompt (in VS Code or GitHub.com):**
 ```
 @changelog-manager create a changelog from recent commits
 ```

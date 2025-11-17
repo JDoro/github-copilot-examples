@@ -13,8 +13,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Instructions for creating and updating CHANGELOG.md files
 
 ### Changed
+- Changelog manager agent now works in both VS Code and GitHub.com (removed vscode-only target restriction)
 - Enhanced Copilot instructions for pull request reviews
 - Added testing guidelines to repository documentation
+- Updated agent documentation to clarify multi-platform support
 
 ## [0.1.0] - 2025-11-15
 
