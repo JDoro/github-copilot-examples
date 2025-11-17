@@ -1026,7 +1026,6 @@ components:
 - Create a component library directory for reusable custom MUI components.
 - Group related components together (e.g., all form components).
 - Export commonly used styled components from a centralized location.
-- Use barrel exports (index files) for cleaner imports.
 
 ### Best Practices Summary
 
