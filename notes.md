@@ -1,6 +1,16 @@
 # Github Copilot Research Notes
+
 These are notes describing various aspects of GitHub Copilot usage and instructions
 for different types of projects.
+
+## copilot-setup=steps.yml
+- defines any setup steps you want to run before every agent task.
+- located in `.github/copilot-setup/steps.yml`
+- This helps save some cycles so the agent doesn't have to continually 
+  identify dependencies that may be more complicated or hefty to install.
+- I was able to use this to install playwright ahead of my agent tasks so 
+  that the agent could easily run my image snapshot tests without having to
+  figure out how to install playwright each time.
 
 ## Instructions
 
@@ -18,3 +28,38 @@ for different types of projects.
 - These seem to be the best way to try to sway the agent to start using new 
   or better patterns even if there are a lot of examples of the old patterns
   in the codebase.
+
+## Custom Agents
+
+- This is a little misleading in my option. It's not really defining a 
+  persona as much as it's defining a set of instructions or a specific 
+  workflow for the agent to follow.
+- You can define custom agents in the `.github/agents/` folder.
+- Each agent has a header that includes a name, description, and the mcp 
+  tools you want this agent to use. 
+- Still trying to find good use case for this. I can tell it will be I just 
+  need to experiment more.
+
+## Prompts
+- You can define custom prompts in the `.github/prompts/` folder.
+- These are more for local use in your IDE.
+
+## Github.com Copilot UI
+- You can select different agents from the Copilot UI on github.com
+- You can view the whole agent session for any agent task triggered in 
+  github.com.
+- You can have a conversation with the agent about the task they are working 
+  on and the agent will adjust its solution.
+- You can @ mention copilot in a PR and they will respond to the comment and 
+  take action in the code if necessary. 
+
+## AGENTS.md
+- Allows you to define context that can be used by all agents.
+- This is scoped to the folder it is in and all subfolders.
+- If you want to define context for specific file types you can create another AGENTS.md
+  file in a subfolder.
+- I think something is missing with this right now. I think the file masking 
+  in the copilot instructions should also apply to AGENTS.md files. The way 
+  AGENTS.md files work right now you are required to strucure your project 
+  by file type instead of potentially structuring by feature.
+
