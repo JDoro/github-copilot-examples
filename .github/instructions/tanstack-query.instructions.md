@@ -147,9 +147,8 @@ minimize re-renders.
 - Avoid over-fetching by keeping query functions focused and specific.
 - Use `refetchOnMount`, `refetchOnWindowFocus`, and `refetchOnReconnect` 
 judiciously based on data requirements.
-- Consider using `keepPreviousData` (now `placeholderData: 
-keepPreviousData`) for paginated queries to prevent loading states between 
-pages.
+- Consider using `placeholderData: keepPreviousData` (formerly `keepPreviousData` 
+option) for paginated queries to prevent loading states between pages.
 
 ### Code Organization
 

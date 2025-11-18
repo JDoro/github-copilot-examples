@@ -198,7 +198,7 @@ function RouteError() {
       <p>{error.message}</p>
     </div>
   );
-};
+}
 ```
 
 ### Pending States
@@ -240,7 +240,7 @@ function LayoutComponent() {
       <footer>Footer</footer>
     </div>
   );
-};
+}
 ```
 
 ### Route Guards and Authentication

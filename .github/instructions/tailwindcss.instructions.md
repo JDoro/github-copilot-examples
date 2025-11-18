@@ -10,6 +10,11 @@ uses Tailwind CSS following best practices.
 This is an extension of the .github/copilot-instructions.md file and works 
 alongside the React Copilot Instructions.
 
+**Note**: Tailwind CSS is a utility-first CSS framework. If your project uses 
+Material UI for components and styling, refer to the Material UI instructions 
+instead. These two approaches can coexist in a monorepo with separate projects, 
+but mixing them within the same application is not recommended.
+
 ## Coding Standards
 
 ### Class Organization and Ordering
@@ -354,8 +359,8 @@ out`.
   <button className="focus:outline-none focus:ring-2 focus:ring-blue-500 
 focus:ring-offset-2">
   ```
-- Ensure sufficient color contrast for text (WCAG AA: 4.5:1 for normal text, 
-3:1 for large text).
+- Ensure sufficient color contrast for text (WCAG AA: 4.5:1 contrast ratio for 
+normal text, 3:1 for large text).
 - Use `sr-only` utility for screen reader-only content:
   ```jsx
   <span className="sr-only">Close menu</span>

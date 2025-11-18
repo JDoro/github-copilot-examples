@@ -10,6 +10,11 @@ uses Material UI (MUI) following best practices.
 This is an extension of the .github/copilot-instructions.md file and works 
 alongside the React Copilot Instructions.
 
+**Note**: Material UI is a component-based styling solution. If your project uses 
+Tailwind CSS for styling, refer to the Tailwind CSS instructions instead. These 
+two approaches can coexist in a monorepo with separate projects, but mixing them 
+within the same application is not recommended.
+
 ## Coding Standards
 
 ### Naming Conventions
@@ -853,8 +858,8 @@ elements:
   ```jsx
   <Typography variant="h1" component="h1">Main Heading</Typography>
   ```
-- Ensure sufficient color contrast ratios (WCAG AA minimum: 4.5:1 for normal 
-text, 3:1 for large text).
+- Ensure sufficient color contrast ratios (WCAG AA minimum: 4.5:1 contrast ratio 
+for normal text, 3:1 for large text).
 - Provide alternative text for images in `CardMedia` and `Avatar`:
   ```jsx
   <CardMedia component="img" alt="Descriptive alt text" />
