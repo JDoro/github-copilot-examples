@@ -29,7 +29,7 @@ and requirements for generating code in this repository.
   (e.g., ESLint, Prettier) report no issues.
 - If the changes involve a web application or user interface, include 
   screenshots or screen recordings of the changes made.
-- if the changes involve a web application run the application and
+- If the changes involve a web application run the application and
   verify that the chrome devtools console shows no errors or warnings.
 - If the changes involve bug fixes, include steps to reproduce the issue and 
   verify the fix.
@@ -75,7 +75,7 @@ function, or component.
 - Use comments to indicate TODOs, FIXMEs, and other notes for future improvements or
   refactoring.
 
-### style
+### Style
 - Always use semicolons at the end of statements.
 - Always surround loop and conditional blocks with curly braces `{}`.
 - Open braces `{` should be on the same line as the control statement.
