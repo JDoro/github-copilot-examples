@@ -64,3 +64,28 @@ for different types of projects.
   AGENTS.md files work right now you are required to strucure your project 
   by file type instead of potentially structuring by feature.
 
+
+## Add MCP to agents
+- You can add MCP tools to your agents to help them perform specific tasks.
+- Locally this is configured based on your IDE and its copilot extension. 
+  Usually via some mcp.json file.
+- You can defined mcp servers that you can connect to through the copilot 
+  settings per your repository in github.com.
+- Here's an example of config for the Chrome DevTools MCP server:
+```json
+{
+  "chrome-devtools": {
+    "type": "local",
+    "command": "npx",
+    "args": [
+      "-y",
+      "chrome-devtools-mcp@latest"
+    ],
+    "tools": ["*"]
+  }
+}
+```
+  - This defines a local MCP server that will be started with `npx -y chrome-devtools-mcp@latest`
+  - The `tools` array defines which tools the agent can use from this MCP 
+    server. This example allows all tools.
+
