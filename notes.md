@@ -39,6 +39,7 @@ for different types of projects.
   tools you want this agent to use. 
 - Still trying to find good use case for this. I can tell it will be I just 
   need to experiment more.
+- some examples [here](https://github.com/github/awesome-copilot/tree/main/agents?utm_source=docs-web-copilot-coding-agent)
 
 ## Prompts
 - You can define custom prompts in the `.github/prompts/` folder.
