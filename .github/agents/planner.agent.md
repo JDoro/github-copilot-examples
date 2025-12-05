@@ -185,7 +185,8 @@ To implement this plan, invoke the developer agent:
 - If file creation fails due to permissions, report the error and suggest 
   checking directory permissions
 - If disk space is insufficient, alert the user to free up space
-- If the plan filename already exists, append a version number (e.g., `-v2`)
+- If the plan filename already exists, ask user for a different name or 
+  include additional timestamp detail
 
 ## Output Quality
 

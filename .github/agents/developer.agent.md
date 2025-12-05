@@ -121,7 +121,7 @@ To update the changelog, invoke:
 - If code conflicts exist, report and resolve
 - If tests fail, diagnose and fix if within scope
 - If blocked, document the blocker and ask for help
-- If the `plans/` folder is missing, ask user to run `@planner` first
+- If the `plans/` folder is missing, create it and inform the user
 
 ## Best Practices
 

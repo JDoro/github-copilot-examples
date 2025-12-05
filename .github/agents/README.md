@@ -30,6 +30,8 @@ persisted as markdown files in the `plans/` folder.
 
 **Usage:**
 
+All agents are available in both VS Code and GitHub.com. You can invoke them in GitHub Copilot Chat using:
+
 ```
 @planner Create a plan for adding user authentication
 @planner Analyze the issue and create an implementation plan
