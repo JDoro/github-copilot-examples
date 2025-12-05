@@ -182,6 +182,10 @@ To implement this plan, invoke the developer agent:
 - If unable to analyze codebase, explain what's needed
 - If requirements are ambiguous, list assumptions made
 - If task is too large, suggest breaking into multiple plans
+- If file creation fails due to permissions, report the error and suggest 
+  checking directory permissions
+- If disk space is insufficient, alert the user to free up space
+- If the plan filename already exists, append a version number (e.g., `-v2`)
 
 ## Output Quality
 

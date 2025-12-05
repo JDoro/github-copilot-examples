@@ -115,10 +115,13 @@ To update the changelog, invoke:
 
 ## Error Handling
 
+- If plan file cannot be found, ask user for the correct plan path
+- If plan file cannot be read, check file permissions and report the error
 - If plan is unclear, ask for clarification
 - If code conflicts exist, report and resolve
 - If tests fail, diagnose and fix if within scope
 - If blocked, document the blocker and ask for help
+- If the `plans/` folder is missing, ask user to run `@planner` first
 
 ## Best Practices
 
