@@ -2,7 +2,79 @@
 
 This directory contains custom GitHub Copilot agents for this repository.
 
+## Agent Workflow
+
+The agents in this repository support a structured development workflow:
+
+```
+@planner → @developer → @changelog-manager
+```
+
+1. **Planner Agent** creates detailed implementation plans
+2. **Developer Agent** implements the code based on plans
+3. **Changelog Manager Agent** documents the changes
+
 ## Available Agents
+
+### Planner (`planner.agent.md`)
+
+A specialized agent for creating detailed implementation plans that are 
+persisted as markdown files in the `plans/` folder.
+
+**Capabilities:**
+- Analyzes tasks, issues, and feature requests
+- Researches the codebase for context
+- Creates step-by-step implementation plans
+- Persists plans as markdown files
+- Hands off to the developer agent
+
+**Usage:**
+
+All agents are available in both VS Code and GitHub.com. You can invoke them in GitHub Copilot Chat using:
+
+```
+@planner Create a plan for adding user authentication
+@planner Analyze the issue and create an implementation plan
+@planner Plan the refactoring of the API client module
+```
+
+**How it works:**
+1. Analyzes the task or requirement
+2. Explores relevant files in the codebase
+3. Creates a detailed implementation plan
+4. Saves the plan to `plans/YYYY-MM-DD-[description].md`
+5. Provides handoff instructions for the developer agent
+
+---
+
+### Developer (`developer.agent.md`)
+
+A specialized agent for implementing code based on plans from the planner 
+agent, then handing off to the changelog-manager agent.
+
+**Capabilities:**
+- Reads and understands implementation plans
+- Writes code following plan specifications
+- Follows repository coding standards
+- Tests implementations
+- Hands off to changelog-manager agent
+
+**Usage:**
+
+```
+@developer Implement the plan in plans/2025-01-15-add-feature.md
+@developer Please implement the latest plan
+@developer Continue implementing from step 3
+```
+
+**How it works:**
+1. Loads the implementation plan from `plans/` folder
+2. Understands context and coding standards
+3. Implements each step in the plan
+4. Tests and verifies changes
+5. Hands off to changelog-manager agent
+
+---
 
 ### Changelog Manager (`changelog-manager.agent.md`)
 
@@ -17,8 +89,6 @@ git commit messages.
 - Supports conventional commit format
 
 **Usage:**
-
-This agent is available in both VS Code and GitHub.com. You can invoke it in GitHub Copilot Chat using:
 
 ```
 @changelog-manager create a changelog from recent commits
