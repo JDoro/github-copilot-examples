@@ -9,6 +9,9 @@ tools:
 metadata:
   category: documentation
   version: 1.0.0
+handoff:
+  previous: developer
+  description: Receives handoff from developer agent to document changes in the changelog
 ---
 
 # Changelog Manager Agent

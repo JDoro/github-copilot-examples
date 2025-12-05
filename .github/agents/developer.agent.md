@@ -9,6 +9,10 @@ tools:
 metadata:
   category: development
   version: 1.0.0
+handoff:
+  previous: planner
+  next: changelog-manager
+  description: Receives plans from planner agent, implements code, then hands off to changelog-manager
 ---
 
 # Developer Agent

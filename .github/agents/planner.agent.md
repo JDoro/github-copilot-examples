@@ -9,6 +9,9 @@ tools:
 metadata:
   category: planning
   version: 1.0.0
+handoff:
+  next: developer
+  description: After creating a plan, hand off to the developer agent for implementation
 ---
 
 # Planner Agent
