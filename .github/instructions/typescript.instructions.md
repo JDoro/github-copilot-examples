@@ -221,8 +221,9 @@ still being type-safe.
   };
   
   type Nullable<T> = T | null;
-  type AsyncReturnType<T extends (...args: any) => Promise<any>> = 
-    T extends (...args: any) => Promise<infer R> ? R : never;
+  
+  // Note: Use built-in Awaited<ReturnType<T>> instead of custom AsyncReturnType
+  type UnwrapPromise<T> = Awaited<T>;
   ```
 
 ### Enums vs Union Types
