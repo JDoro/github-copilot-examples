@@ -489,10 +489,6 @@ modified:
   type Optional<T> = {
     [K in keyof T]?: T[K];
   };
-  
-  type Getters<T> = {
-    [K in keyof T as `get${Capitalize<string & K>}`]: () => T[K];
-  };
   ```
 - Enable `noUncheckedIndexedAccess` to make index signatures return 
 `T | undefined`:
@@ -505,7 +501,8 @@ modified:
 
 - Use conditional types for advanced type transformations:
   ```typescript
-  type IsString<T> = T extends string ? true : false;
+  // Example: Type-level boolean result (though 'boolean' would be simpler)
+  type IsString<T> = T extends string ? 'yes' : 'no';
   type StringOrNumber<T> = T extends string ? string : number;
   
   type Flatten<T> = T extends Array<infer U> ? U : T;
