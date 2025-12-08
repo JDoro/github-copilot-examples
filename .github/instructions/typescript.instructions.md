@@ -224,7 +224,7 @@ still being type-safe.
   
   type Nullable<T> = T | null;
   
-  // Note: Use built-in Awaited<ReturnType<T>> instead of custom AsyncReturnType
+  // Use Awaited<T> to unwrap Promise types
   type UnwrapPromise<T> = Awaited<T>;
   ```
 
@@ -501,8 +501,11 @@ modified:
 
 - Use conditional types for advanced type transformations:
   ```typescript
-  // Example: Type-level boolean result (though 'boolean' would be simpler)
+  // Conditional type returning specific literal types
   type IsString<T> = T extends string ? 'yes' : 'no';
+  type Check1 = IsString<string>; // 'yes'
+  type Check2 = IsString<number>; // 'no'
+  
   type StringOrNumber<T> = T extends string ? string : number;
   
   type Flatten<T> = T extends Array<infer U> ? U : T;
@@ -510,10 +513,10 @@ modified:
   ```
 - Leverage `infer` keyword for extracting types:
   ```typescript
-  // Example showing how built-in ReturnType works (don't redefine it)
+  // Built-in ReturnType implementation (for reference only - use the built-in type)
   // type ReturnType<T> = T extends (...args: any[]) => infer R ? R : never;
   
-  // Custom type using infer pattern
+  // Custom types using the infer pattern
   type PromiseType<T> = T extends Promise<infer U> ? U : T;
   type ArrayElement<T> = T extends (infer U)[] ? U : never;
   ```
