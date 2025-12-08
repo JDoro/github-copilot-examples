@@ -93,11 +93,13 @@ initializer:
   ```
 - Use type aliases for mapped types and conditional types:
   ```typescript
-  type Readonly<T> = {
-    readonly [K in keyof T]: T[K];
+  // Custom mapped type example
+  type DeepReadonly<T> = {
+    readonly [K in keyof T]: T[K] extends object ? DeepReadonly<T[K]> : T[K];
   };
   
-  type NonNullable<T> = T extends null | undefined ? never : T;
+  // Custom conditional type example
+  type NoUndefined<T> = T extends undefined ? never : T;
   ```
 - For simple object types, prefer interfaces for better error messages and 
 performance.
