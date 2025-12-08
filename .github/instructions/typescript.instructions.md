@@ -513,12 +513,12 @@ modified:
   ```
 - Leverage `infer` keyword for extracting types:
   ```typescript
-  // Built-in ReturnType implementation (for reference only - use the built-in type)
-  // type ReturnType<T> = T extends (...args: any[]) => infer R ? R : never;
-  
   // Custom types using the infer pattern
   type PromiseType<T> = T extends Promise<infer U> ? U : T;
   type ArrayElement<T> = T extends (infer U)[] ? U : never;
+  
+  // Note: TypeScript provides built-in ReturnType<T> and Parameters<T>
+  // to extract function return types and parameters
   ```
 - Use conditional types with mapped types:
   ```typescript
