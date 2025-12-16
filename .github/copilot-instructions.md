@@ -89,6 +89,7 @@ The following specialized instruction files provide detailed guidance for specif
 | **/*.ts,**/*.tsx | `.github/instructions/typescript.instructions.md` | TypeScript best practices, type safety, utility types, and advanced patterns |
 | **/*.js,**/*.jsx,**/*.ts,**/*.tsx | `.github/instructions/react.instructions.md` | React component patterns, hooks, and best practices |
 | **/*.js,**/*.jsx,**/*.ts,**/*.tsx | `.github/instructions/react-hook-form.instructions.md` | Form handling with React Hook Form, validation with Zod, and form patterns |
+| **/*.js,**/*.jsx,**/*.ts,**/*.tsx | `.github/instructions/tanstack-form.instructions.md` | Form handling with TanStack Form, type-safe validation, and reactive form state |
 | **/*.js,**/*.jsx,**/*.ts,**/*.tsx | `.github/instructions/zustand.instructions.md` | State management with Zustand, store patterns, and middleware |
 | **/*.js,**/*.jsx,**/*.ts,**/*.tsx | `.github/instructions/react-accessibility.instructions.md` | WCAG 2.1 AA compliance, semantic HTML, ARIA, and accessible component patterns |
 | **/*.js,**/*.jsx,**/*.ts,**/*.tsx | `.github/instructions/axios.instructions.md` | API client patterns with Axios, interceptors, error handling, and TypeScript types |

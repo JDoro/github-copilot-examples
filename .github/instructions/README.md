@@ -34,6 +34,11 @@ These instruction files extend the base `.github/copilot-instructions.md` and ar
 - **Coverage:** Form setup, field registration, validation with Zod, error handling, controlled components, field arrays, file uploads, integration with UI libraries
 - **Lines:** ~690
 
+#### TanStack Form (`tanstack-form.instructions.md`)
+- **Applies to:** `**/*.js`, `**/*.jsx`, `**/*.ts`, `**/*.tsx`
+- **Coverage:** Form setup with useForm hook, field registration with form.Field, validation adapters (Zod, Yup, Valibot), TypeScript typing, async validation, array fields, nested objects, cross-field validation, file uploads, integration with UI libraries, accessibility, performance optimization
+- **Lines:** ~1275
+
 ### Data Fetching & Routing
 
 #### TanStack Query (`tanstack-query.instructions.md`)
@@ -155,16 +160,17 @@ To add a new instruction file:
 
 ## Statistics
 
-- **Total Instruction Files:** 13
-- **Total Lines:** ~7,768
-- **Technologies Covered:** TypeScript, React, State Management, Forms, Data Fetching, Routing, API Integration, Testing, Styling (2 frameworks), Code Quality, Performance, Accessibility
+- **Total Instruction Files:** 14
+- **Total Lines:** ~9,043
+- **Technologies Covered:** TypeScript, React, State Management, Forms (2 libraries), Data Fetching, Routing, API Integration, Testing, Styling (2 frameworks), Code Quality, Performance, Accessibility
 - **File Patterns Supported:** JavaScript, TypeScript, JSX, TSX, Test files, HTML, Vue, Svelte
 
 ## Maintenance
 
-Last Updated: 2025-12-15
+Last Updated: 2025-12-16
 
 ### Recent Additions
+- TanStack Form (2025-12-16)
 - React Testing Library (2025-12-15)
 - React Hook Form (2025-12-15)
 - Zustand (2025-12-15)
